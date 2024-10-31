@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f7f7f7;
+}
+
+/* Carousel container */
+.carousel-container {
+    position: relative;
+    width: 80%;
+    /* Adjust width as needed */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel track */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* This will create the sliding effect */
+}
+
+/* Carousel item */
+.carousel-item {
+    min-width: 25%;
+    /* Display 4 items at a time */
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Image styling */
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);
+    /* Scale up on hover for effect */
+}
+
+/* Caption styling */
+.caption {
+    margin-top: 0;
+    /* Remove margin to eliminate gap */
+    padding: 5px;
+    /* Optional: Add padding for better spacing */
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    background-color: #333;
+}
+
+/* Navigation button styling */
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 50%;
+        /* Display 2 items at a time on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-item {
+        min-width: 100%;
+        /* Display 1 item at a time on extra-small screens */
+    }
+}
